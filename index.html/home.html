@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SYED MEDIA</title>
+    <link rel="icon" href="SYED MEDIA.png" />
+
+    <style>
+      /* --- Global Reset & Variables --- */
+      :root {
+        /* Elegant Cream, Gold, and Soft Green Palette */
+        --bg-main: #F9F8F4;      /* Cream background */
+        --bg-card: #FFFFFF;
+        --text-primary: #2C3531;
+        --text-secondary: #5C675E;
+        --header-bg: #6B8E7B;    /* Soft Green */
+        --header-text: #FFFFFF;
+        --header-link: #EAE6D7;
+        --footer-bg: #2C3531;
+        --footer-text: #D6D2C4;
+        --accent-gold: #D4AF37;  /* Gold accent */
+      }
+
+      /* Dark Theme Overrides */
+      [data-theme="dark"] {
+        --bg-main: #1A1F1C;
+        --bg-card: #242B27;
+        --text-primary: #EAE6D7;
+        --text-secondary: #A3A9A5;
+        --header-bg: #141816;
+        --footer-bg: #0D100F;
+        --accent-gold: #C5A059;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        transition: background-color 0.4s ease, color 0.4s ease;
+        line-height: 1.7;
+      }
+
+      /* 🟢 Header */
+      header {
+        background-color: var(--header-bg);
+        color: var(--header-text);
+        padding: 15px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: background-color 0.4s;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+      }
+
+      .header-left img {
+        height: 100px;
+        width: auto;
+        object-fit: contain;
+        margin-right: 15px;
+      }
+
+      nav a {
+        color: var(--header-link);
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 13px;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--accent-gold);
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      /* Theme Toggle Button */
+      .theme-toggle-btn {
+        background: transparent;
+        border: 1px solid var(--header-link);
+        color: var(--header-link);
+        padding: 8px 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 13px;
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle-btn:hover {
+        background: var(--accent-gold);
+        color: #fff;
+        border-color: var(--accent-gold);
+      }
+
+      /* ⚪ Main Content */
+      main {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+
+      section {
+        background-color: var(--bg-card);
+        padding: 40px;
+        margin-bottom: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        transition: background-color 0.4s, box-shadow 0.4s;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: inherit;
+        border-bottom: 2px solid var(--accent-gold);
+        padding-bottom: 10px;
+        display: inline-block;
+        font-weight: 300;
+      }
+
+      .subtitle {
+        font-style: italic;
+        color: var(--accent-gold);
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+      }
+
+      article p {
+        font-size: 1.1rem;
+        color: var(--text-primary);
+        text-align: justify;
+        margin-bottom: 20px;
+      }
+
+      /* Scene Images Styling */
+      .scene-img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 20px 0;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      }
+
+      /* ⚫ Footer */
+      footer {
+        background-color: var(--footer-bg);
+        color: var(--footer-text);
+        padding: 40px 20px;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 60px;
+        transition: background-color 0.4s;
+      }
+
+      .footer-links {
+        margin-top: 15px;
+      }
+
+      footer a {
+        color: var(--accent-gold);
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+      }
+
+      footer a:hover {
+        color: #fff;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 15px;
+          text-align: center;
+        }
+        nav a {
+          margin: 0 10px;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+        section {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <div class="header-left">
+        <img src="edited-photo.png" alt="logo"/>
+      </div>
+      <div class="controls">
+        <nav>
+          <a href="home.html">Home</a>
+          <a href="https://wa.me/923466162954" target="_blank">Contact Us</a>
+        </nav>
+        <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h1>Muhammad</h1>
+        <div class="subtitle">Prophet of Islam</div>
+        <img class="scene-img" src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&q=80" alt="Islamic Architecture representing Mecca and Medina">
+        <article>
+          <p>
+            Muhammad (born c. 570, Mecca, Arabia [now in Saudi Arabia]—died June
+            8, 632, Medina) was the founder of Islam and the proclaimer of the
+            Qurʾān. He is traditionally said to have been born in 570 in Mecca and
+            to have died in 632 in Medina, where he had been forced to emigrate to
+            with his adherents in 622.
+          </p>
+        </article>
+      </section>
+
+      <section>
+        <h1>Biographical sources</h1>
+        <img class="scene-img" src="https://images.unsplash.com/photo-1585036156171-384164a8c675?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&q=80" alt="Open Quran manuscript page">
+        <article>
+          <p>
+            The Qurʾān yields little concrete biographical information about the Islamic Prophet:
+            it addresses an individual “messenger of God,” whom a number of verses call Muhammad
+            (e.g., 3:144), and speaks of a pilgrimage sanctuary that is associated with the 
+            “valley of Mecca” and the Kaʿbah (e.g., 2:124–129, 5:97, 48:24–25). Certain verses
+            assume that Muhammad and his followers dwell at a settlement called al-madīnah 
+            (“the town”) or Yathrib (e.g., 33:13, 60) after having previously been ousted by
+            their unbelieving foes, presumably from the Meccan sanctuary.
+          </p>
+          <p>
+            Most of the biographical information that the Islamic tradition preserves about Muhammad thus occurs outside the Qurʾān, in the so-called sīrah (Arabic: “biography”) literature. Arguably the single most important work in the genre is Muḥammad ibn Isḥāq’s (died 767–768) Kitāb al-maghāzī (“Book of [the Prophet’s] Military Expeditions”). 
+          </p>
+          <p>
+            By carefully comparing alternative versions of one and the same biographical narrative, scholars have been able to show that a certain number of traditions about Muhammad’s life—for instance, an account of the Prophet’s emigration from Mecca to Medina—were in circulation already by the end of the 7th century. 
+          </p>
+        </article>
+      </section>
+
+      <section>
+        <h1>Biography according to the Islamic tradition</h1>
+        <img class="scene-img" src="https://images.unsplash.com/photo-1565552643982-2e23286f78d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&q=80" alt="Beautiful detailed Islamic geometric patterns">
+        <article>
+          <p>
+            Muhammad is born as a member of the tribe of Quraysh and the clan of Hāshim. His hometown of Mecca houses an ancient and famous pilgrimage sanctuary, the Kaʿbah. Although founded by Abraham, worship there has over time become dominated by polytheism and idolatry. Muhammad himself is born in 570.
+          </p>
+          <p>
+            Muhammad’s prophetic initiation occurs at the age of 40. During a period of devotional withdrawal atop one of the mountains in the vicinity of Mecca, the angel Gabriel appears to him in an awe-inspiring encounter and teaches him the opening verses of sūrah 96 of the Qurʾān.
+          </p>
+          <p>
+            At Medina, Muhammad has a house built that simultaneously serves as a prayer venue for his followers. He also drafts a covenant that joins together “the Believers and Submitters [or Muslims] of Quraysh and of Yathrib” as well as some of Medina’s Jewish tribes into a community (ummah) recognizing Muhammad as the “Messenger of God.”
+          </p>
+        </article>
+      </section>
+
+      <section>
+        <h1>Status in the Qurʾān and in post-Qurʾānic Islam</h1>
+        <img class="scene-img" src="https://images.unsplash.com/photo-1601662528567-526cd06f6582?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&q=80" alt="Traditional Islamic lamp illuminating a warm space">
+        <article>
+          <p>
+            Unsurprisingly, the figure of Muhammad plays a seminal role in Islamic thought and practice. In certain respects, his post-Qurʾānic standing markedly surpasses the way in which he is presented in scripture. For example, the Qurʾān emphasizes that Muhammad, like earlier messengers of God, is a mere mortal (e.g., 14:11, 17:93), whereas Sufi thinkers of a speculative bent describe him as the incarnation of a preexistent being of pure light.
+          </p>
+          <p>
+            Even beyond the strictly legal purport of Muhammad’s example, the imitation of the Prophet has functioned as an important vehicle of ethical and spiritual growth for many Muslims across the centuries. Thus, pious Muslims through the ages have endeavoured to follow Prophetic precedent even in seemingly mundane matters.
+          </p>
+        </article>
+      </section>
+
+      <section>
+        <h1>Western perceptions</h1>
+        <article>
+          <p>
+            In striking contrast to the standard Muslim view of the Prophet as a perfect embodiment of virtue and piety, medieval Christian polemicists condemned Muhammad as a deliberate imposter. This attitude changed only in the 18th century, when various Western scholars began calling for a more impartial assessment of Muhammad.
+          </p>
+          <p>
+            Throughout the 18th and early 19th centuries, the idea of Muhammad’s subjective truthfulness and sincerity increasingly spread. A particularly emphatic rejection of the erstwhile predominant view that Muhammad practiced conscious deception is found in Thomas Carlyle’s On Heroes, Hero-Worship, and the Heroic in History (1841).
+          </p>
+          <p>
+            The valorization of the Islamic Prophet was intimately tied up with the beginnings of modern Western scholarship on Muhammad and the Qurʾān, conceptualizing Muhammad as a major historical protagonist and the Qurʾān as an important document of human religious experience.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div>Follow us on:</div>
+      <div class="footer-links">
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+      </div>
+    </footer>
+
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        const themeBtn = document.getElementById('themeToggle');
+        
+        if (body.getAttribute('data-theme') === 'dark') {
+          body.removeAttribute('data-theme');
+          themeBtn.innerText = '🌙 Dark Mode';
+        } else {
+          body.setAttribute('data-theme', 'dark');
+          themeBtn.innerText = '☀️ Light Mode';
+        }
+      }
+    </script>
+  </body>
+</html>
